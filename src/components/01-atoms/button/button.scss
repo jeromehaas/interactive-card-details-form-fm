@@ -1,0 +1,11 @@
+// @import 'stlyes/configs/variables.scss';
+@import 'styles/configs/variables.scss';
+
+.button {
+	display: block;
+	width: 100%;
+	padding: 16px;	
+	background-color: $deep-violet;
+	color: $white;
+	border-radius: 8px;
+}

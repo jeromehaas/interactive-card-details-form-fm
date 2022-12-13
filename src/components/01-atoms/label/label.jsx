@@ -3,7 +3,7 @@ import './label.scss';
 const Label = ({ className, children, htmlFor }) => {
 
 	return (
-		<label className={` ${ className } label`} htmlFor={ htmlFor }>{ children }</label>
+		<label className={` ${ className ? className : '' } label`} htmlFor={ htmlFor }>{ children }</label>
 	);
 
 };
