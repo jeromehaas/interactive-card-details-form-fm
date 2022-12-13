@@ -1,0 +1,81 @@
+@import 'styles/configs/variables.scss';
+
+.input {
+	margin-bottom: 22px;
+	
+	&__field-wrapper {
+		overflow: hidden;
+		padding: 2px;
+		border-radius: 9.5px;
+		display: block;
+		position: relative;	
+		margin-bottom: 4px;
+
+		&::after {
+			content: "";
+			position: absolute;
+			border-radius: 8px;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: -2px;
+			z-index: -1;
+			width: calc(2 * 100% + 4px);
+			height: calc(100% + 4px);
+			background: $light-grey;
+		}
+
+
+
+	}
+
+	&__error {
+		display: none;
+	}
+
+	
+	&__field {
+		padding: 12px 16px;
+		width: 100%;
+		border-radius: 8px;
+		border: none;
+		
+		&::placeholder {
+			color: transparentize($deep-violet, 0.75);
+		}
+
+		&:active, 
+		&:focus {
+			border: none;
+			outline: none;
+		}
+
+	}
+
+	&--active {
+
+		.input__field-wrapper::after {
+			background: linear-gradient(to right, #6348FE, #610595);
+			animation-name: color-slide;
+			animation-duration: 1s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+		
+	}
+
+	&--error {
+
+		.input__field-wrapper::after {
+			background: $red !important;
+		}
+
+		.input__error {
+			color: $red;
+			display: block;
+		}
+		
+	}
+
+}

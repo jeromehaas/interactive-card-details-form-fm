@@ -1,13 +1,9 @@
-import Label from "components/01-atoms/label/label";
-import Button from 'components/01-atoms/button/button';
+import InteractiveCard from "components/03-organisms/interactive-card/interactive-card";
 
 const App = () => {
 
   return (
-    <div className="app">
-			<Label>this is the label</Label>
-			<Button>Confirm</Button>
-    </div>
+		<InteractiveCard />
   );
 
 };

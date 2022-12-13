@@ -1,0 +1,35 @@
+@import 'styles/configs/variables.scss';
+
+.interactive-card {
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 480px auto;
+
+	&__preview, .preview {
+		background-color: $deep-violet;
+	}
+
+	&__controller, .controller  {
+		// background-color: $red;
+		width: 100%;
+		height: 100%;
+		max-width: 1200px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;;
+		
+		&__form, .form {
+			width: 100%;
+			max-width: 400px;
+
+			&__input {
+				width: 100%;
+			}
+		}
+
+	}
+
+}
