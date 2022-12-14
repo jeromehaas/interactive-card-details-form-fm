@@ -1,7 +1,6 @@
 @import 'styles/configs/variables.scss';
 
 .input {
-	margin-bottom: 22px;
 	
 	&__field-wrapper {
 		overflow: hidden;
@@ -25,8 +24,6 @@
 			height: calc(100% + 4px);
 			background: $light-grey;
 		}
-
-
 
 	}
 

@@ -20,5 +20,18 @@
 		font-size: 18px;
 	}
 
+}
+.interactive-card {
+	
+	.front__cardholder-name {
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+
+	.front__card-number {
+		font-size: 28px;
+		letter-spacing: 3px;
+	}
 
 }
