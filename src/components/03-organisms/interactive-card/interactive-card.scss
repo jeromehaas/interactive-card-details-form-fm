@@ -143,6 +143,7 @@
 						color: $white;
 						letter-spacing: 2px;
 					}
+
 				}
 
 			}
@@ -179,8 +180,8 @@
 				"card-number card-number"
 				"exp-date cvc"
 				"button button";
-
 			grid-gap: 16px;
+			margin: 32px 64px 32px 184px;
 
 				&__wrapper {
 					display: grid;
