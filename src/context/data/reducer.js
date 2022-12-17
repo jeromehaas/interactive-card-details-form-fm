@@ -25,6 +25,36 @@ const reducer = (state, action) => {
 				}
 			}
 		}
+		case 'ADD_ERROR_STYLE': {
+			return {
+				...state, 
+				form: {
+					...state.form,
+					fields: {
+						...state.form.fields,
+						[action.payload.field]: {
+							...state.form.fields[action.payload.field],
+							hasError: true,
+						}
+					}
+				}
+			}
+		}
+		case 'REMOVE_ERROR_STYLE': {
+			return {
+				...state, 
+				form: {
+					...state.form,
+					fields: {
+						...state.form.fields,
+						[action.payload.field]: {
+							...state.form.fields[action.payload.field],
+							hasError: false,
+						}
+					}
+				}
+			}
+		}
 		default: {
 			return {
 				...state

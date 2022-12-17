@@ -4,7 +4,8 @@
 		"paths": {
 			"styles/*": [ "src/styles/*" ],
 			"components/*": [ "src/components/*" ],
-			"public/*": [ "src/public/*" ]
+			"public/*": [ "src/public/*" ],
+			"hooks/*": [ "src/hooks/*" ]
 		}
 	}
 }

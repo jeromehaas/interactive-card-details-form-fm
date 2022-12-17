@@ -62,6 +62,13 @@
 		
 	}
 
+	&--center {
+
+		.input__field {
+			text-align: center;	
+		}
+	}
+
 	&--error {
 
 		.input__field-wrapper::after {
