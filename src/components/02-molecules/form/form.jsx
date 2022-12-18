@@ -24,7 +24,6 @@ const Form = ({ className }) => {
 
     const validateInputs = () => {
         let isValid = true;
-        console.log(validateCardNumber());
 				if (!validateCardholderName()) isValid = false;
 				if (!validateCardNumber()) isValid = false;
 				if (!validateExpDateMonth()) isValid = false;

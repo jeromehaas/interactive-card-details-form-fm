@@ -5,7 +5,7 @@ import Button from 'components/01-atoms/button/button';
 
 const SuccessMessage = ({ className }) => {
 
-	const [ dataDispatch ] = useDataProvider();
+	const [ data, dataDispatch ] = useDataProvider();
 			
 	const returnToForm = () => {
 		dataDispatch({ type: 'SET_SUBMITTED', payload: { value: false } } ) 
@@ -17,6 +17,7 @@ const SuccessMessage = ({ className }) => {
 				<Check className="checkmark__icon" />
 			</div>
 			<h2 className="success-message__title">Thank you</h2>
+				{ data.form.isSubmitted }
 			<p className="success-message__text">We’ve added your card details</p>
 			<Button className="success-message__button" onClick={ returnToForm }>Continue</Button>
 		</div>

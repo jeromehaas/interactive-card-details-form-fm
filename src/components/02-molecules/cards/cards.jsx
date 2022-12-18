@@ -5,8 +5,8 @@ import './cards.scss';
 
 const Cards = ({ className }) => {
     
-    const [data ] = useDataProvider();
-	const { formatCardNumber, formatCardholderName, formatExpDate, formatCvc } = useFormat();
+  	const [data ] = useDataProvider();
+		const { formatCardNumber, formatCardholderName, formatExpDate, formatCvc } = useFormat();
 
     return (
         <div className={`${ className } cards `}>
