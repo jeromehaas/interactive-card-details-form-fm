@@ -5,12 +5,11 @@ import Button from 'components/01-atoms/button/button';
 
 const SuccessMessage = ({ className }) => {
 
-	const [ data, dataDispatch ] = useDataProvider();
+	const [ dataDispatch ] = useDataProvider();
 			
 	const returnToForm = () => {
 		dataDispatch({ type: 'SET_SUBMITTED', payload: { value: false } } ) 
-		console.log('hello')
-	}
+	};
 
 	return (
 		<div className={`${ className } success-message`}>

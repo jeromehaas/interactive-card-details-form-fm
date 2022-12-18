@@ -27,6 +27,7 @@ const Cards = ({ className }) => {
                 <div className="back__cvc cvc">
                     <p className="cvc__value">{ formatCvc(data.form.fields.cvc.value) }</p>
                 </div>
+								<img className="back__details" src="./graphics/card-details.svg" alt="Card Details" />
             </div>
         </div>
     );

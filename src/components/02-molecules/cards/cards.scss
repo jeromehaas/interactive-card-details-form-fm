@@ -135,6 +135,15 @@
 
         }
 
+				&__details {
+					position: absolute;
+					bottom: 40px;
+					left: 32px;
+					right: 32px;
+					width: 180px;
+					margin: 0 auto;
+				}
+
     }
 
     &:first-of-type {
