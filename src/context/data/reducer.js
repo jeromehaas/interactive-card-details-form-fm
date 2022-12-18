@@ -55,6 +55,15 @@ const reducer = (state, action) => {
 				}
 			}
 		}
+		case 'SET_SUBMITTED': {
+			return {
+				...state, 
+				form: {
+					...state.form,
+					isSubmitted: action.payload.value
+				}
+			}
+		}
 		default: {
 			return {
 				...state

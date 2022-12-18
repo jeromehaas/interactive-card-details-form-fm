@@ -179,27 +179,7 @@
 		@media (max-width: 320px) {
 		
 		&__preview, .preview {
-			height: 180px !important;			
-
-			&__cards, .cards {
-
-				&__card, .card {
-					transform: scale(0.5) !important;
-
-					&__front {
-						left: -80px;
-						right: -80px;
-						top: 0px;
-					}
-
-					&__back {
-						display: none;
-					}
-
-				}
-
-			}
-			
+			display: none;
 		}
 
 	}

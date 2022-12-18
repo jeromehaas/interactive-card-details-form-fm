@@ -1,32 +1,37 @@
+import './form.scss';
 import { useProvider as useDataProvider } from 'context/data/provider';
 import Input from 'components/01-atoms/input/input';
 import Label from 'components/01-atoms/label/label';
 import Button from 'components/01-atoms/button/button';
 import useFormat from 'hooks/format';
 import useValidate from 'hooks/validate';
-import './form.scss';
 
 const Form = ({ className }) => {
 
-	const [data, dataDispatch] = useDataProvider();
+	const [ data, dataDispatch ] = useDataProvider();
 	const { formatCardNumber, formatCardholderName, formatExpDate, formatCvc } = useFormat();
 	const { validateCardholderName, validateCardNumber, validateExpDateMonth, validateExpDateYear, validateCvc } = useValidate();
 	
 	const handleSubmit = (event) => {
 		event.preventDefault();
-        validateInputs();
+    const isValid = validateInputs();
+		if (isValid) dispatchForm();
+	};
+	
+	const dispatchForm = () => {
+		dataDispatch({ type: 'SET_SUBMITTED', payload: { value: true } } ) 
 	};
 
     const validateInputs = () => {
         let isValid = true;
         console.log(validateCardNumber());
-		if (!validateCardholderName()) isValid = false;
-		if (!validateCardNumber()) isValid = false;
-		if (!validateExpDateMonth()) isValid = false;
-		if (!validateExpDateYear()) isValid = false;
-		if (!validateCvc()) isValid = false;
-        console.log(isValid);
-    };
+				if (!validateCardholderName()) isValid = false;
+				if (!validateCardNumber()) isValid = false;
+				if (!validateExpDateMonth()) isValid = false;
+				if (!validateExpDateYear()) isValid = false;
+				if (!validateCvc()) isValid = false;
+				return isValid;
+			};
 
     return (
         <form className={`${ className } form`} onSubmit={ (event) => handleSubmit(event) }>

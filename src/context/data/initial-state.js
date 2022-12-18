@@ -8,6 +8,7 @@ const initialState = {
 			cvc: { value: '123', hasError: false },
 		},
 		activeField: null,
+		isSubmitted: false,
 	},
 };
 
