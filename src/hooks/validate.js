@@ -11,6 +11,7 @@ const useValidate = () => {
         if (cardholderName.length < 3) isValid = false;
         if (/[^a-zA-Z\s]/.test(cardholderName)) isValid = false;
         isValid ? dataDispatch({ type: 'REMOVE_ERROR_STYLE', payload: { field: 'cardholderName' } }) : dataDispatch({ type: 'ADD_ERROR_STYLE', payload: { field: 'cardholderName' }});
+        return isValid ? true : false;
     };
 
     const validateCardNumber = () => {
@@ -19,6 +20,7 @@ const useValidate = () => {
         if (cardNumber.length < 19) isValid = false;
         if (cardNumber.length > 19) isValid = false;
         isValid ? dataDispatch({ type: 'REMOVE_ERROR_STYLE', payload: { field: 'cardNumber' } }) : dataDispatch({ type: 'ADD_ERROR_STYLE', payload: { field: 'cardNumber' }});
+        return isValid ? true : false;
     };
 
     const validateExpDateMonth = () => {
@@ -29,6 +31,7 @@ const useValidate = () => {
         if (expDateMonth.length > 3 ) isValid = false;
         if (parseInt(expDateMonth) > 12) isValid = false;
         isValid ? dataDispatch({ type: 'REMOVE_ERROR_STYLE', payload: { field: 'expDateMonth' } }) : dataDispatch({ type: 'ADD_ERROR_STYLE', payload: { field: 'expDateMonth' }});
+        return isValid ? true : false;
     };  
 
     const validateExpDateYear = () => {
@@ -41,6 +44,7 @@ const useValidate = () => {
         if (expDateYear < currentYear) isValid = false;
         if (expDateYear > currentYear + 5) isValid = false;
         isValid ? dataDispatch({ type: 'REMOVE_ERROR_STYLE', payload: { field: 'expDateYear' } }) : dataDispatch({ type: 'ADD_ERROR_STYLE', payload: { field: 'expDateYear' }});
+        return isValid ? true : false;
     }; 
 
     const validateCvc = () => {
@@ -50,6 +54,7 @@ const useValidate = () => {
         if (cvc.length < 3) isValid = false;
         if (cvc.length > 4 ) isValid = false;
         isValid ? dataDispatch({ type: 'REMOVE_ERROR_STYLE', payload: { field: 'cvc' } }) : dataDispatch({ type: 'ADD_ERROR_STYLE', payload: { field: 'cvc' }});
+        return isValid ? true : false;
     };
 
     return {

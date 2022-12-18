@@ -1,0 +1,75 @@
+.form {
+    width: 100%;
+    max-width: 400px;
+    margin-left: 60px;
+    display: grid;
+    grid-template-areas: 
+        "cardholder-name cardholder-name"
+        "card-number card-number"
+        "exp-date cvc"
+        "button button";
+    grid-gap: 16px;
+    margin: 32px 240px 32px 32px;
+    padding: 32px;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: calc(50% - 8px) calc(50% - 8px);
+        grid-gap: 16px;
+    }
+
+    &__item, .item {
+
+        &__cardholder-name {
+            grid-area: cardholder-name;
+        }
+
+        &__card-number {
+            grid-area: card-number
+        }
+
+        &__exp-date {
+            grid-area: exp-date;
+        }
+
+        &__cvc {
+            grid-area: cvc;
+        }
+
+    }
+
+    &__button {
+        grid-area: button;
+        width: 100%;
+    }
+
+
+    @media (max-width: 1400px) {
+        margin: 32px auto !important;
+    }
+
+    @media (max-width: 800px) {
+        margin: 64px auto !important;
+    }
+
+    @media (max-width: 600px) {
+        margin: 0 auto !important;
+    }
+
+    @media (max-width: 320px) {
+        grid-template-areas: 
+            "cardholder-name cardholder-name"
+            "card-number card-number"
+            "exp-date cxp-date"
+            "cvc cvc"
+            "button button";
+ 
+            &__wrapper {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-gap: 16px;
+            }
+
+        }
+
+}

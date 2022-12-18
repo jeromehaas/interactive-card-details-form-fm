@@ -13,151 +13,16 @@
 		
 		&__shadows, .shadows {
 			opacity: 0.2 !important;
-
-			&__item {
-				width: 400px;
-				height: 120px;
-			}
-
+			position: absolute;
 		}
 
-		&__card-container {
+		&__cards {
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
 			right: -120px;
 			z-index: 10;
 		}
-
-		&__card, .card {
-			width: 448px;
-			height: 248px;
-			z-index: 50;
-			position: relative;				
-			border-radius: 8px;
-			overflow: hidden;
-
-			&__front, .front {
-				background: linear-gradient(-210deg, #6348FE, #610595);
-				position: relative;
-
-				&__shadows, .shadows {
-					opacity: 1 !important;
-
-					&__item, .item {
-						width: 120px ;
-						height: 40px;
-						margin-top: 120px;
-						margin-left: 120px;
-					}
-
-				}
-
-				&__cardholder-name {
-					position: absolute;
-					left: 32px;
-					bottom: 24px;
-					color: $white;
-				}
-
-				&__card-number {
-					position: absolute;
-					left: 32px;
-					bottom: 80px;
-					color: $white;
-				}
-
-				&__dot, .dot {
-					position: absolute;
-					border-radius: 50%;
-
-					&--big {
-						top: 32px;
-						left: 32px;
-						width: 48px;
-						height: 48px;
-						background-color: $white;
-					}
-
-					&--small {
-						top: 44px;
-						left: 96px;
-						width: 24px;
-						height: 24px;
-						border: 1px solid $white;
-					}
-
-				}
-
-				&__exp-date, .exp-date {
-					position: absolute;
-					right: 32px;
-					bottom: 24px;
-					color: $white;
-					display: flex;
-					
-					&__month {
-
-					}
-
-					&__separator {
-						margin: 0 4px;
-					}
-
-					&__year {
-
-					}
-					
-				}
-
-			}
-
-			&__back, .back {
-				background: linear-gradient(180deg, #FFFFFF 5%, #D2D3D9 91.69%);
-				position: relative;
-
-				&__magnetic-stripe {
-					background-color: $dark-grey;
-					position: absolute;
-					top: 24px;
-					right: 0;
-					left: 0;
-					height: 56px;
-				}
-				
-				&__cvc, .cvc {
-					background-color: $medium-grey;
-					position: absolute;
-					top: 120px;
-					right: 40px;
-					left: 40px;
-					height: 40px;
-					border-radius: 4px;
-					display: flex;
-					flex-direction: row;
-					justify-content: flex-end;;
-					align-items: center;
-					padding: 4px 16px;
-
-					&__value {
-						color: $white;
-						letter-spacing: 2px;
-					}
-
-				}
-
-			}
-
-			&:first-of-type {
-				margin-bottom: 32px;
-			}
-			
-			&:last-of-type {
-				margin-left: 64px;
-			}
-
-		}
-
 
 	}
 
@@ -168,52 +33,173 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		align-items: center;;
+		align-items: center;
+	}
+
+	@media (max-width: 1200px) {
+		grid-template-columns: auto;
+		grid-template-rows: 400px auto;;
+		height: 360px !important;
 		
-		&__form, .form {
-			width: 100%;
-			max-width: 400px;
-			margin-left: 60px;
-			display: grid;
-			grid-template-areas: 
-				"cardholder-name cardholder-name"
-				"card-number card-number"
-				"exp-date cvc"
-				"button button";
-			grid-gap: 16px;
-			margin: 32px 64px 32px 184px;
+		&__preview, .preview {
+			height: 360px !important;
 
-				&__wrapper {
-					display: grid;
-					grid-template-columns: 1fr 1fr;
-					grid-gap: 16px;
+			&__cards, .cards {
+				position: relative;
+				top: 0;
+				transform: translateY(0%);
+				right: 0;
+
+				&__card, .card {
+					margin: 46px auto;
+					position: absolute;
+
+					&__front {
+						margin-bottom: 32px;
+						left: calc(50% - 64px);
+						transform: translateX(-50%);
+						top: 120px;
+						z-index: 10;
+					}
+
+					&__back {
+						transform: translateX(-50%);
+						left: calc(50% + 64px);
+						top: 32px;
+						z-index: 5;
+					}
 				}
 
-				&__item, .item {
+			}
+			
+		}
 
-					&__cardholder-name {
-						grid-area: cardholder-name;
+		&__controller, .controller  {
+			align-items: flex-start;
+		}
+
+	}
+
+	@media (max-width: 800px) {
+		height: 360px !important;			
+		
+		&__preview, .preview {
+			height: 360px !important;			
+
+			&__cards, .cards {
+
+				&__card, .card {
+
+					&__front {
+						left: 64px;
+						transform: translateX(0%);
+						top: 112px;
+						z-index: 10;
 					}
 
-					&__card-number {
-						grid-area: card-number
+					&__back {
+						right: 64px;
+						left: unset;
+						transform: translateX(0%);
+						top: 16px;
+						z-index: 5;
+					}
+				}
+
+			}
+			
+		}
+
+		&__controller, .controller  {
+			align-items: flex-start;
+		}
+
+	}
+
+	@media (max-width: 650px) {
+		height: 280px !important;			
+
+		&__preview, .preview {
+			height: 280px !important;			
+
+			&__cards, .cards {
+
+				&__card, .card {
+					transform: scale(0.75) !important;
+
+					&__front {
+						left: 32px;
+						top: 80px;
 					}
 
-					&__exp-date {
-						grid-area: exp-date;
-					}
-
-					&__cvc {
-						grid-area: cvc;
+					&__back {
+						right: 32px;
+						left: unset;
+						transform: translateX(0%);
+						top: 0px;
 					}
 
 				}
 
-				&__button {
-					grid-area: button;
-					width: 100%;
+			}
+			
+		}
+
+	}
+
+	@media (max-width: 450px) {
+		
+		&__preview, .preview {
+
+			&__cards, .cards {
+
+				&__card, .card {
+					transform: scale(0.6) !important;
+
+					&__front {
+						left: -64px;
+						top: 80px;
+					}
+
+					&__back {
+						right: -64px;
+						left: unset;
+						transform: translateX(0%);
+						top: 0px;
+					}
+
 				}
 
+			}
+			
+		}
+
+	}
+
+		@media (max-width: 320px) {
+		
+		&__preview, .preview {
+			height: 180px !important;			
+
+			&__cards, .cards {
+
+				&__card, .card {
+					transform: scale(0.5) !important;
+
+					&__front {
+						left: -80px;
+						right: -80px;
+						top: 0px;
+					}
+
+					&__back {
+						display: none;
+					}
+
+				}
+
+			}
+			
 		}
 
 	}
